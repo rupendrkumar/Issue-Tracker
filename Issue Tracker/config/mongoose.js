@@ -1,16 +1,18 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-const url = 'mongodb://localhost:27017/MyDB';
-// mongoose.connect('url') 
-mongoose.connect(url);
-const db=mongoose.connection;
+const mongoURI = 'mongodb://localhost:27017/MyDB';
 
-//If any Error then Getting this Line
-db.on('error',console.error.bind(console,"Error connecting to MongoDB"));   
-
-
-db.once('open',()=>{
-    console.log("Connected to Database :: MongoDB ")
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB!');
+});
+
 
 module.exports=db;  //Exports db
