@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-const mongoURI = 'mongodb://localhost:27017/MyDB';
+const mongoURI = 'mongosh "mongodb+srv://cluster0.m6awew0.mongodb.net/" --apiVersion 1 --username rupendrakumar223com --password GRGszmTD7QMccTpp';
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
