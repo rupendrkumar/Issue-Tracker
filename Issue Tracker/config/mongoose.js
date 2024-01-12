@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 const url = 'mongodb://localhost:27017/MyDB';
 // mongoose.connect('url') 
 mongoose.connect(url);
